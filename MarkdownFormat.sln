@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30428.66
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{21750939-2491-4346-A9F5-AC3EF00D38DF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{F4A99772-65E1-420D-B8F7-BDE391F24F9D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "etc", "etc", "{4F9A9CFA-2E34-49C5-8449-FAC6CC35CFC7}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MarkdownFormat", "src\MarkdownFormat\MarkdownFormat.csproj", "{E9CE25CE-1B4F-4252-B922-3BDC3A87E027}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MarkdownFormat.Tests", "tests\MarkdownFormat.Tests\MarkdownFormat.Tests.csproj", "{622D61B3-556C-4982-A05E-7E05594D99E0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E9CE25CE-1B4F-4252-B922-3BDC3A87E027}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9CE25CE-1B4F-4252-B922-3BDC3A87E027}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9CE25CE-1B4F-4252-B922-3BDC3A87E027}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9CE25CE-1B4F-4252-B922-3BDC3A87E027}.Release|Any CPU.Build.0 = Release|Any CPU
+		{622D61B3-556C-4982-A05E-7E05594D99E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{622D61B3-556C-4982-A05E-7E05594D99E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{622D61B3-556C-4982-A05E-7E05594D99E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{622D61B3-556C-4982-A05E-7E05594D99E0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E9CE25CE-1B4F-4252-B922-3BDC3A87E027} = {21750939-2491-4346-A9F5-AC3EF00D38DF}
+		{622D61B3-556C-4982-A05E-7E05594D99E0} = {F4A99772-65E1-420D-B8F7-BDE391F24F9D}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {558AC3CF-EC33-4BFF-AD14-475AEB090693}
+	EndGlobalSection
+EndGlobal
