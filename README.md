@@ -1,6 +1,6 @@
 # Markdown format
 
-A command line tool to rewrite quickly written markdown document to be more readable and rich.
+A command-line tool to rewrite quickly written markdown document to be more readable and rich.
 
 ## Features
 
