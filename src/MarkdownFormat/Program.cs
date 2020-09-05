@@ -1,8 +1,8 @@
 ﻿using System.CommandLine;
 using System.CommandLine.Invocation;
-using System.IO;
 using System.Threading.Tasks;
-using MarkdownFormat.IO;
+using MarkdownFormat.Formatters;
+using MarkdownFormat.IO.Console;
 using MarkdownFormat.Processors;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -23,23 +23,34 @@ namespace MarkdownFormat
                 Handler = CommandHandler.Create<string>(Run),
             };
 
-            var fileArgument = new Argument("filename")
-            {
-                ArgumentType = typeof(FileInfo),
-            };
-            root.AddArgument(fileArgument);
+            var fileArgument = new Option(new[] {"--input", "-i"}, "input file");
+            root.AddOption(fileArgument);
 
             return root;
         }
 
-        private static void Run(string? filename)
+        private static async Task Run(string? filename)
+        {
+            var provider = ConfigureServices(filename);
+            var processor = provider.GetRequiredService<IMarkdownProcessor>();
+            await processor.RunAsync();
+        }
+
+        private static ServiceProvider ConfigureServices(string? filename)
         {
             var services = new ServiceCollection();
+
             services.AddScoped<IMarkdownProcessor, MarkdownProcessor>();
-            services.AddTransient<IReader>();
-            services.AddTransient<IWriter>();
-            var provider = services.BuildServiceProvider();
-            var processor = provider.GetRequiredService<IMarkdownProcessor>();
+            services.AddScoped<IMarkdownFormatter, SubscriptFormatter>();
+
+            services.AddSingleton<IMarkdownFormatter, SubscriptFormatter>();
+
+            if (filename is null)
+            {
+                services.AddConsoleIO();
+            }
+
+            return services.BuildServiceProvider();
         }
     }
 }
