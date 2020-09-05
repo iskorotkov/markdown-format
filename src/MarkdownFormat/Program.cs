@@ -26,7 +26,6 @@ namespace MarkdownFormat
             var fileArgument = new Argument("filename")
             {
                 ArgumentType = typeof(FileInfo),
-                Arity = new ArgumentArity(0, 1),
             };
             root.AddArgument(fileArgument);
 

@@ -10,6 +10,7 @@ A command-line tool to rewrite quickly written markdown document to be more read
 - [ ] replace sum (and maybe other similar words) with symbols;
 - [ ] save original file somewhere instead of overwriting it completely and irreversibly;
 - [ ] add support for formatting marked regions (to avoid false positives);
+- [ ] add support for formatting text pasted in console window;
 
 ## Examples
 
